@@ -1,0 +1,1 @@
+do local _={["test-library"]={versions={"1.0"},author="DCNick3",dependecies={}},["test-program"]={versions={"1.0"},author="DCNick3",dependecies={}}};return _;end

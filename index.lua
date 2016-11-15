@@ -1,5 +1,1 @@
-local programs = {
-	"test-program"
-};
-
-return programs;
+do local _={["test-library"]={versions={"1.0"},dependecies={},sizes={["1.0"]=10240},author="DCNick3"},["test-program"]={versions={"1.0"},dependecies={},sizes={["1.0"]=10240},author="DCNick3"}};return _;end
