@@ -1,1 +1,1 @@
-do local _={["test-library"]={author="DCNick3",sizes={["1.0"]=10240},dependecies={},versions={"1.0"}},["test-program"]={sizes={["1.0"]=10240},versions={"1.0"},dependecies={},author="DCNick3"}};return _;end
+do local _={["test-library"]={dependecies={["1.0"]={}},versions={"1.0"},sizes={["1.0"]=10240},author="DCNick3"},["test-program"]={sizes={["1.0"]=10240},versions={"1.0"},author="DCNick3",dependecies={["1.0"]={}}}};return _;end
