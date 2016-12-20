@@ -1,4 +1,6 @@
-local internet = require("internet");
+local component = require("component")
+local internet = require("internet")
+local internet_raw = component.internet
 local os = require("os")
 local filesystem = require("filesystem")
 
