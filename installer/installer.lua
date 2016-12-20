@@ -28,7 +28,7 @@ end
 local fname = os.tmpname()
 download_to_file(libpm_url, fname)
 local libpm = dofile(fname)
-filesystem.remove(fname)
+--filesystem.remove(fname)
 libpm:init()
 libpm:update()
 

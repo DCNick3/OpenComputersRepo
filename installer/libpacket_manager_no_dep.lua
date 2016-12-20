@@ -39,7 +39,8 @@ local var_dump = (function()
  end
  return var_dump
 end)()
-local serprint = (function()
+local serprint = (
+function()
  local n, v = "serpent", 0.285 -- (C) 2012-15 Paul Kulchenko; MIT License
  local c, d = "Paul Kulchenko", "Lua serializer and pretty printer"
  local snum = {[tostring(1/0)]='1/0 --[[math.huge]]',[tostring(-1/0)]='-1/0 --[[-math.huge]]',[tostring(0/0)]='0/0'}
@@ -169,7 +170,9 @@ local serprint = (function()
    dump = function(a, opts) return s(a, merge({name = '_', compact = true, sparse = true}, opts)) end,
    line = function(a, opts) return s(a, merge({sortkeys = true, comment = true}, opts)) end,
    block = function(a, opts) return s(a, merge({indent = '  ', sortkeys = true, comment = true}, opts)) end }
-end)()
+end 
+end
+)()
 local tar = (local function()
 --- A pure-Lua implementation of untar (unpacking .tar archives)
 local tar = {}
