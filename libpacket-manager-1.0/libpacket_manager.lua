@@ -10,7 +10,7 @@ local var_dump = require("var_dump")
 local serprint = require("serprint")
 local tar = require("tar")
 
-local address = "https://github.com/DCNick3/OpenComputersRepo/raw/master/"
+local address = "https://raw.githubusercontent.com/DCNick3/OpenComputersRepo/master/"
 local index_name = "index.lua"
 local base_dir = "/etc/packet_manager/"
 local packages_list = "packages.list"

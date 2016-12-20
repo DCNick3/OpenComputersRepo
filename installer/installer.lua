@@ -4,7 +4,7 @@ local internet_raw = component.internet
 local os = require("os")
 local filesystem = require("filesystem")
 
-local libpm_url = "https://github.com/DCNick3/OpenComputersRepo/raw/master/installer/libpacket_manager_no_dep.lua"
+local libpm_url = "https://raw.githubusercontent.com/DCNick3/OpenComputersRepo/master/installer/libpacket_manager_no_dep.lua"
 
 local function download_to_file(address, file)
  print("Downloading "..address)
@@ -15,7 +15,7 @@ local function download_to_file(address, file)
  if buf == nil then
      error("Request error!");
  end
- local file_handle = io.open(file, "wb")
+ local file_handle = io.open(file, "w")
  
  while  buf ~= nil do
   file_handle:write(buf)

@@ -20,7 +20,13 @@ local operations =
  end,
  remove    =function()
   for _,v in ipairs(arg) do
-   pm:remove(v)
+   if v == "_all" then
+    for _, v in pm:list() do
+     pm:remove(v)
+    end
+   else
+    pm:remove(v)
+   end
   end
  end,
  update    =function()
