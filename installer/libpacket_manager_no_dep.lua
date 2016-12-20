@@ -173,7 +173,7 @@ function()
 end 
 end
 )()
-local tar = (local function()
+local tar = (function()
 --- A pure-Lua implementation of untar (unpacking .tar archives)
 local tar = {}
 
