@@ -171,7 +171,6 @@ function()
    line = function(a, opts) return s(a, merge({sortkeys = true, comment = true}, opts)) end,
    block = function(a, opts) return s(a, merge({indent = '  ', sortkeys = true, comment = true}, opts)) end }
 end 
-end
 )()
 local tar = (function()
 --- A pure-Lua implementation of untar (unpacking .tar archives)
