@@ -175,9 +175,6 @@ local tar = (function()
 --- A pure-Lua implementation of untar (unpacking .tar archives)
 local tar = {}
 
-
-local var_dump = require("var_dump")
-
 -- local fs = require("luarocks.fs")
 -- local dir = require("luarocks.dir")
 -- local util = require("luarocks.util")
