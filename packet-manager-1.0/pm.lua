@@ -21,7 +21,7 @@ local operations =
  remove    =function()
   for _,v in ipairs(arg) do
    if v == "_all" then
-    for _, v in pm:list() do
+    for _, v in pairs(pm:list()) do
      pm:remove(v)
     end
    else
