@@ -19,4 +19,12 @@ return {
   ["1.0"]={} },
   description="Simple and useful function for debugging programs",
  },
+ ["libpacket-manager"]={versions={"1.0"},author="DCNick3",dependencies={
+  ["1.0"]={"libtar-1.0", "libvar_dump-1.0", "libserprint-1.0"} },
+  description="Packet manager helper library",
+ },
+ ["packet-manager"]={versions={"1.0"},author="DCNick3",dependencies={
+  ["1.0"]={"libpacket-manager-1.0"} },
+  description="Packet manager",
+ },
 }

@@ -4,11 +4,7 @@ function file_exists(name)
 end
 
 local index 
-if file_exists("index.lua") then
- index = dofile("index.lua")
-else
- index = dofile("index_pretty.lua")
-end
+index = dofile("index_pretty.lua")
 
 local function exportstring( s )
  return string.format("%q", s)

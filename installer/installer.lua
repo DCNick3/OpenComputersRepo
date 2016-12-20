@@ -36,7 +36,7 @@ local packages_to_install = {"libtar-1.0", "libserprint-1.0", "libvar_dump-1.0",
 
 for _,v in pairs(packages_to_install) do
  local r, e = pcall(libpm.install, libpm, v)
- if not e then
+ if not r and not string.match(e, "already installed") then
   print("Error: "..e)
   print("... while installing "..v)
   os.exit(-1)
