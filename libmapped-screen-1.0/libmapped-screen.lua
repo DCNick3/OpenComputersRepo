@@ -39,12 +39,11 @@ local libmappedscreen = {
   gpu.bind(screen)
   gpu.setResolution(self.width, self.height)
   local nums = {}
-  local x,y = 1,1
+  local lines = {}
   for i = 1, #self.map do
    local c = unicode.sub(self.map,i,i)
    if c == "\n" then
-    y = y + 1
-    x = 0
+    table.insert(lines, "")
    elseif values[c] ~= nil then
     local pos
     if nums[c] ~= nil then
@@ -57,11 +56,13 @@ local libmappedscreen = {
     if unicode.len(val) == 0 then
      val = " "
     end
-    gpu.set(x,y,val)
+    lines[#lines] = lines[#lines]..val
    elseif c == " " then
-    gpu.set(x,y," ")
+    lines[#lines] = lines[#lines].." "
    end
-   x = x + 1
+  end
+  for i,l in ipairs(lines) do
+   gpu.set(0,i,l)
   end
  end,
  width = 80,
