@@ -32,7 +32,10 @@ local libmappedscreen = {
   self.legends = legends
   self.map = map
  end,
- display = function(self, screen, values)
+ display = function(self, values, screen)
+  if screen == nil then
+   screen = component.list("screen")()
+  end
   gpu.bind(screen)
   gpu.setResolution(self.width, self.height)
   local nums = {}
