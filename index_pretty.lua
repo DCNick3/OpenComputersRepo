@@ -27,4 +27,8 @@ return {
   ["1.0"]={"libpacket-manager-1.0"} },
   description="Packet manager",
  },
+ ["libmapped-screen"]={versions={"1.0"},author="DCNick3",dependencies={
+  ["1.0"]={"libvar_dump-1.0"} },
+  description="Simple library for mapping screen. Useful for showing various infomation.",
+ },
 }

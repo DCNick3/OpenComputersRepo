@@ -3,7 +3,7 @@ PACKAGES=$(lua pack_lua_helper.lua list)
 rm -f index.lua
 for f in $PACKAGES
 do
- rm $f.tar
+ rm -f $f.tar
  echo Packing $f...
  cd $f && tar -cf ../$f.tar * && cd ..
  s=$(stat --printf="%s" $f.tar)
