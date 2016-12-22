@@ -31,4 +31,8 @@ return {
   ["1.0"]={"libvar_dump-1.0"} },
   description="Simple library for mapping screen. Useful for showing various infomation.",
  },
+ ["eventcat"]={versions={"1.0"},author="DCNick3",dependencies={
+  ["1.0"]={"libserprint-1.0"} },
+  description="Simple program for viewing signals",
+ },
 }
