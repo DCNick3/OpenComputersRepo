@@ -39,7 +39,7 @@ local libmappedscreen = {
   gpu.bind(screen)
   gpu.setResolution(self.width, self.height)
   local nums = {}
-  local lines = {}
+  local lines = {""}
   for i = 1, #self.map do
    local c = unicode.sub(self.map,i,i)
    if c == "\n" then
@@ -63,6 +63,7 @@ local libmappedscreen = {
   end
   for i,l in ipairs(lines) do
    gpu.set(0,i,l)
+   --var_dump(i,l);
   end
  end,
  width = 80,
