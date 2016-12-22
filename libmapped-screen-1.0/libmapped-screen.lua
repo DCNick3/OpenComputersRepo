@@ -64,7 +64,7 @@ local libmappedscreen = {
    end
   end
   for i,l in ipairs(lines) do
-   gpu.set(0,i,l)
+   gpu.set(1,i,l)
    --var_dump(i,l);
   end
  end,
