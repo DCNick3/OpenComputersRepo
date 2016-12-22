@@ -59,7 +59,7 @@ local libmappedscreen = {
      val = " "
     end
     lines[#lines] = lines[#lines]..val
-   elseif c == " " then
+   else--if c == " " then
     lines[#lines] = lines[#lines].." "
    end
   end
