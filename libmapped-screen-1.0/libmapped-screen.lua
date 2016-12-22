@@ -36,7 +36,9 @@ local libmappedscreen = {
   if screen == nil then
    screen = component.list("screen")()
   end
-  gpu.bind(screen)
+  if gpu.getScreen() ~= screen then
+   gpu.bind(screen)
+  end
   gpu.setResolution(self.width, self.height)
   local nums = {}
   local lines = {""}
