@@ -35,4 +35,8 @@ return {
   ["1.0"]={"libserprint-1.0"} },
   description="Simple program for viewing signals",
  },
+ ["movement-logger"]={versions={"1.0"},author="DCNick3",dependencies={
+  ["1.0"]={} },
+  description="Simple program for movement sensor to log, which players were detected",
+ },
 }
