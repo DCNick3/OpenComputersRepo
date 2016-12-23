@@ -7,7 +7,7 @@ local exceptions = {["DCNick"]=true}
  
 local function time_global()
  while true do
-  local res, t = pcall(internet.request("http://www.timeapi.org/utc/in+three+hours?format=\d/\m/\y%20\I:\M:\S%20\p"))
+  local res, t = pcall(internet.request("http://www.timeapi.org/utc/in+three+hours?format=\\d/\\m/\\y%20\\I:\\M:\\S%20\\p"))
   if res then
    return t
   end
