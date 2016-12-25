@@ -1,5 +1,5 @@
-local internet = require("internet")
 local event = require("event")
+local internet = require("internet")
 local os = require("os")
 local fs = require("filesystem")
  

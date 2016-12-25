@@ -1,6 +1,6 @@
 local manifest = {
 	files = {
-		["serprint.lua"]="/usr/lib/serprint.lua",
+		["serprint.lua"]="/lib/serprint.lua",
 	},
 }
 return manifest

@@ -39,4 +39,8 @@ return {
   ["1.0"]={} },
   description="Simple program for movement sensor to log, which players were detected",
  },
+ ["tar"]={versions={"1.0"},author="DCNick3",dependencies={
+ ["1.0"]={"libtar-1.0"} },
+  description="Simple program to unpack tar archives",
+ },
 }

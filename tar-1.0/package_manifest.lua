@@ -1,6 +1,6 @@
 local manifest = {
 	files = {
-		["tar.lua"]="/lib/tar.lua",
+  ["tar.lua"] = "/bin/tar.lua"
 	},
 }
 return manifest
