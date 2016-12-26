@@ -43,4 +43,8 @@ return {
  ["1.0"]={"libtar-1.0"} },
   description="Simple program to unpack tar archives",
  },
+ ["shrun"]={versions={"1.0"},author="DCNick3",dependencies={
+ ["1.0"]={} },
+  description="Simple program for executing shell scripts",
+ },
 }
