@@ -4,12 +4,16 @@ local unicode = require("unicode")
 local var_dump = require("var_dump")
 local gpu = component.gpu
 
-local libmappedscreen = {
- setDisplayMap = function(self, map) 
+local width, height = 80, 25
+local legends, map
+
+local libmappedscreen
+libmappedscreen = {
+ setDisplayMap = function(_map) 
   local rows = {}
   local len = nil
   local legends = {}
-  for r in string.gmatch(map, "([^\n]+)") do
+  for r in string.gmatch(_map, "([^\n]+)") do
    if len == nil then
     len = unicode.len(r)
    else
@@ -27,49 +31,54 @@ local libmappedscreen = {
    end
    table.insert(rows, r)
   end
-  self.width = len
-  self.height = #rows
-  self.legends = legends
-  self.map = map
+  width = len
+  height = #rows
+  legends = legends
+  map = _map
  end,
- display = function(self, values, screen)
-  if screen == nil then
-   screen = component.list("screen")()
-  end
-  if gpu.getScreen() ~= screen then
-   gpu.bind(screen)
-  end
-  gpu.setResolution(self.width, self.height)
-  local nums = {}
-  local lines = {""}
-  for i = 1, #self.map do
-   local c = unicode.sub(self.map,i,i)
-   if c == "\n" then
-    table.insert(lines, "")
-   elseif values[c] ~= nil then
-    local pos
-    if nums[c] ~= nil then
-     pos = nums[c]
-    else
-     pos = 1
+ display = function(values, screen)
+  if screen == "*all" then
+   for a in component.list("screen") do
+    var_dump(a)
+    libmappedscreen.display(values, a)
+   end
+  else
+   if screen == nil then
+    screen = component.list("screen")()
+   end
+   if gpu.getScreen() ~= screen then
+    gpu.bind(screen)
+   end
+   gpu.setResolution(width, height)
+   local nums = {}
+   local lines = {""}
+   for i = 1, #map do
+    local c = unicode.sub(map,i,i)
+    if c == "\n" then
+     table.insert(lines, "")
+    elseif values[c] ~= nil then
+     local pos
+     if nums[c] ~= nil then
+      pos = nums[c]
+     else
+      pos = 1
+     end
+     nums[c] = pos + 1
+     local val = unicode.sub(values[c], pos, pos)
+     if unicode.len(val) == 0 then
+      val = " "
+     end
+     lines[#lines] = lines[#lines]..val
+    else--if c == " " then
+     lines[#lines] = lines[#lines].." "
     end
-    nums[c] = pos + 1
-    local val = unicode.sub(values[c], pos, pos)
-    if unicode.len(val) == 0 then
-     val = " "
-    end
-    lines[#lines] = lines[#lines]..val
-   else--if c == " " then
-    lines[#lines] = lines[#lines].." "
+   end
+   for i,l in ipairs(lines) do
+    gpu.set(1,i,l)
+    --var_dump(i,l);
    end
   end
-  for i,l in ipairs(lines) do
-   gpu.set(1,i,l)
-   --var_dump(i,l);
-  end
  end,
- width = 80,
- height = 25,
 };
 
 return libmappedscreen;
