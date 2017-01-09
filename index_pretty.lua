@@ -47,4 +47,8 @@ return {
  ["1.0"]={} },
   description="Simple program for executing shell scripts",
  },
+ ["libbinser"]={versions={"1.0"},author="Calvin Rose",dependencies={
+ ["1.0"]={} },
+  description="There already exists a number of serializers for Lua, each with their own uses, limitations, and quirks. binser is yet another robust, pure Lua serializer that specializes in serializing Lua data with lots of userdata and custom classes and types. binser is a binary serializer and does not serialize data into human readable representation or use the Lua parser to read expressions. This makes it safe and moderately fast, especially on LuaJIT. binser also handles cycles, self-references, and metatables.",
+ },
 }
