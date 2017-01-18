@@ -26,7 +26,7 @@ end
 
 for l in io.lines(args[1]) do
  local r, e = shell.execute(l)
- if not t then
+ if not r then
   print("Error: ")
   print(e)
   print("While executing "..l)
