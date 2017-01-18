@@ -25,5 +25,10 @@ if fs.isDirectory(shell.resolve(args[1])) then
 end
 
 for l in io.lines(args[1]) do
- shell.execute(l)
+ local r, e = shell.execute(l)
+ if not t then
+  print("Error: ")
+  print(e)
+  print("While executing "..l)
+ end
 end
